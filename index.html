@@ -1,40 +1,133 @@
-<!doctype html>
-<html lang="en">
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TypeScript: Supercharge Your JavaScript</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/theme/white.min.css">
+    <style>
+        .reveal h2, .reveal h3, .reveal p, .reveal li {
+            font-family: Arial, sans-serif;
+        }
+        .reveal h2 {
+            color: #2b6cb0;
+        }
+        .reveal code {
+            background: #f0f0f0;
+            padding: 2px 5px;
+            border-radius: 3px;
+        }
 
-		<title>reveal.js</title>
+		li {
+			font-size: 36px;
+		}
+    </style>
+</head>
+<body>
+    <div class="reveal">
+        <div class="slides">
+            <section>
+                <h2>TypeScript: Supercharge Your JavaScript</h2>
 
-		<link rel="stylesheet" href="dist/reset.css">
-		<link rel="stylesheet" href="dist/reveal.css">
-		<link rel="stylesheet" href="dist/theme/black.css">
+                <p>by Kirill Medvedev</p>
+            </section>
 
-		<!-- Theme used for syntax highlighted code -->
-		<link rel="stylesheet" href="plugin/highlight/monokai.css">
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+            <section>
+                <h2>The Problem with JavaScript</h2>
+                <ul>
+                    <li><strong>Dynamic Typing</strong><br>Errors at runtime, not compile time</li>
+                    <li><strong>Weak Type System</strong><br>Hard to refactor, maintain</li>
+                    <li><strong>Growing Pains</strong><br>Codebases become unmanageable</li>
+                </ul>
+            </section>
 
-		<script src="dist/reveal.js"></script>
-		<script src="plugin/notes/notes.js"></script>
-		<script src="plugin/markdown/markdown.js"></script>
-		<script src="plugin/highlight/highlight.js"></script>
-		<script>
-			// More info about initialization & config:
-			// - https://revealjs.com/initialization/
-			// - https://revealjs.com/config/
-			Reveal.initialize({
-				hash: true,
+            <section>
+                <h2>TypeScript to the Rescue: Static Typing</h2>
+                <ul>
+                    <li><strong>Catch Errors Early</strong><br>During development, not production</li>
+                    <li><strong>Better Readability</strong><br>Clear intentions, self-documenting</li>
+                    <li><strong>IDE Superpowers</strong><br>Autocompletion, refactoring, navigation</li>
+                </ul>
+            </section>
 
-				// Learn about plugins: https://revealjs.com/plugins/
-				plugins: [ RevealMarkdown, RevealHighlight, RevealNotes ]
-			});
-		</script>
-	</body>
+            <section>
+                <h2>TypeScript Basics: Types and Interfaces</h2>
+                <ul>
+                    <li><strong>Interfaces</strong><br>Contracts for objects</li>
+                    <li><strong>Type Aliases</strong><br>Custom type names</li>
+                    <li><strong>Primitive Types</strong><br><code>string</code>, <code>number</code>, <code>boolean</code>, <code>any</code></li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Practical Example: Function Type Annotations</h2>
+                <pre><code data-trim>
+// JavaScript
+function greet(name) { <br> return "Hello " + name;  <br>}
+
+// TypeScript
+function greet(name: string): string {  <br> return "Hello " + name;  <br>}
+                </code></pre>
+                <p><strong>Benefits:</strong> Clear signatures, fewer runtime errors</p>
+            </section>
+
+            <section>
+                <h2>Working with Classes in TypeScript</h2>
+                <ul>
+                    <li><strong>Encapsulation</strong><br>Bundling data with methods</li>
+                    <li><strong>Inheritance</strong><br>Parent-child relationships</li>
+                    <li><strong>Access Modifiers</strong><br><code>public</code>, <code>private</code>, <code>protected</code></li>
+                    <li><strong>Polymorphism</strong><br>Multiple forms, one interface</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Generics: Reusable Components</h2>
+                <ul>
+                    <li><strong>Define Type Parameters</strong><br>Use <code>&lt;T&gt;</code> as placeholder</li>
+                    <li><strong>Apply to Functions/Classes</strong><br><code>function identity&lt;T&gt;(arg: T): T</code></li>
+                    <li><strong>Reap Benefits</strong><br>Type safety with flexibility</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Union and Intersection Types</h2>
+                <pre><code data-trim>
+// Union Types
+type StringOrNumber = string | number;  // Accept multiple type options (like logical OR)
+
+// Intersection Types
+type Employee = Person & Worker;  // Combine multiple types (like logical AND)
+                </code></pre>
+            </section>
+
+            <section>
+                <h2>Advanced Topics</h2>
+                <ul>
+                    <li><strong>Mapped Types</strong><br>Transform existing types</li>
+                    <li><strong>Conditional Types</strong><br>Types that depend on other types</li>
+                    <li><strong>Utility Types</strong><br>Built-in type transformations</li>
+                </ul>
+            </section>
+
+            <section>
+                <h2>Conclusion: Embrace TypeScript</h2>
+                <ul>
+                    <li><strong>Improved Code Quality</strong><br>Fewer bugs, better organization</li>
+                    <li><strong>Developer Productivity</strong><br>Better tooling, faster development</li>
+                    <li><strong>Start Today</strong><br>Easy migration path from JS</li>
+                </ul>
+            </section>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/reveal.js/4.5.0/reveal.min.js"></script>
+    <script>
+        Reveal.initialize({
+            controls: true,
+            progress: true,
+            center: true,
+            hash: true,
+            transition: 'slide'
+        });
+    </script>
+</body>
 </html>
